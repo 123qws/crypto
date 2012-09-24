@@ -36,6 +36,9 @@ if __name__ == "__main__":
     c.append(ct[32:48])
     c.append(ct[48:64])
 
+    for i in range(0, 4):
+        c[i] = c[i].dncode("hex")
+
     m = ["", "", ""]
     po = PaddingOracle()
 
@@ -49,7 +52,11 @@ if __name__ == "__main__":
                 # print que
                 if(po.query(que)):
                     m[i] = chr(g)+m[i]
+                    print m[i]
                     break
+
+    print
+    print
             
     for i in range(0, 3):
         print m[i]
